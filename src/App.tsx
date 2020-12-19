@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import Loader from './reusables/components/loader/Loader';
 import SuspenseWrapper from './reusables/components/suspenseWrapper/SuspenseWrapper';
-import { useDidUpdate, useInterval, usePrefetch } from './reusables/hooks';
+import { usePrefetch } from './reusables/hooks';
 
 const myDivImport = () => import('./MyDiv');
 
@@ -12,10 +12,13 @@ const Home = () => {
     setCount((prev) => prev + 1);
   };
 
-  useDidUpdate(() => console.log('Clicked'), [count]);
+  //useDidUpdate(() => console.log('Clicked'), [count]);
   // In this case Clicked is logged once we start button click
   // and not on initial render of page
-  useInterval(() => setCount((prev) => prev + 1), count > 10 ? 200 : 1000);
+
+  //useInterval(() => setCount((prev) => prev + 1), count > 10 ? 200 : 1000);
+
+  //const { dd, hh, mm, ss } = useTimer(86400);
 
   return (
     <div style={{ backgroundColor: 'dodgerblue', height: '100p  x' }}>
@@ -25,6 +28,10 @@ const Home = () => {
       <button onClick={handleChange}>Increment</button> <div>Counter</div>
       <h1>{count}</h1>
       <Link to="/mydiv">Show My Div</Link>
+      {/* <h1>Timer</h1>
+      <h3>
+        {hh} : {dd} : {mm} :{ss}
+      </h3> */}
     </div>
   );
 };
