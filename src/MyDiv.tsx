@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MyDiv = () => {
   return (
@@ -45,6 +46,7 @@ const MyDiv = () => {
         iusto at ipsum maxime architecto molestias sint et explicabo
         exercitationem delectus ipsam aliquam!
       </div>
+      <Link to="/">Home</Link>
     </div>
   );
 };

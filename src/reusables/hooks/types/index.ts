@@ -5,3 +5,8 @@ export type usePrefetchStruct = (
     default: React.ComponentType<any>;
   }>
 ) => any | null;
+
+export type useIntervalStruct = (
+  callback: () => void,
+  delay: number | null
+) => void;
